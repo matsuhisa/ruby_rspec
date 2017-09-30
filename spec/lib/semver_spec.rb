@@ -1,12 +1,4 @@
-
 describe Semver do
-  describe "#initialize" do
-    it  do
-      actual = Semver.new(1, 4, 2)
-      expect(actual).to be_a Semver
-    end
-  end
-
   describe "#to_s" do
     subject { Semver.new( major, minor, patch ).to_s }
 
