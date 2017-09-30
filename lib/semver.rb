@@ -10,8 +10,7 @@ class Semver
     "#{@major}.#{@minor}.#{@patch}"
   end
 
-  def ==(onther)
-    # self.major == onther.major && self.minor == onther.minor && self.patch == onther.patch
-    return true
+  def ==(another)
+    self.major == another.major && self.minor == another.minor && self.patch == another.patch
   end
 end

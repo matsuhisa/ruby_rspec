@@ -20,18 +20,19 @@ describe Semver do
   end
 
   describe "#==" do
-    it "1.4.2 と 1.4.2 は等しい" do
-      one = Semver.new(1,4,2)
-      onther = Semver.new(1,4,2)
+    let(:one){ Semver.new(1, 4, 2) }
+    subject { one == another }
 
-      expect(one).to eq onther
+    context "同じバージョンの場合" do
+      let(:another){ Semver.new(1, 4, 2) }
+
+      it { is_expected.to be true }
     end
 
-    it "1.4.2 と 2.1.0 は等しくない" do
-      semver142 = Semver.new(1,4,2)
-      semver210 = Semver.new(2,1,0)
+    context "異なるバージョンの場合" do
+      let(:another){ Semver.new(2, 1, 0) }
 
-      expect(semver142).not_to eq semver210
+      it { is_expected.to be false }
     end
   end
 end
