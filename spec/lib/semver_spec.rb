@@ -24,6 +24,11 @@ describe Semver do
       let(:patch) { [*-100..-1].sample }
       it_behaves_like '引数不正でエラー'
     end
+
+    # context "メジャーバージョンに文字列を渡す" do
+    #   let(:major){ "メジャー" }
+    #   it_behaves_like '引数不正でエラー'
+    # end
   end
 
   describe "#to_s" do
